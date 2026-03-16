@@ -2,7 +2,15 @@ import java.util.Objects;
 
 public class Actor extends Person{
 
-    public double height;
+    private double height;
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
 
     public Actor(String name, String surname, Gender gender, double height) {
         super(name, surname, gender);
@@ -15,18 +23,18 @@ public class Actor extends Person{
         if (o == null || getClass() != o.getClass()) return false;
         Actor actor = (Actor) o;
         return Double.compare(actor.height, height) == 0 &&
-                Objects.equals(name, actor.name) &&
-                Objects.equals(surname, actor.surname);
+                Objects.equals(getName(), actor.getName()) &&
+                Objects.equals(getSurname(), actor.getSurname());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, surname, height);
+        return Objects.hash(getName(), getSurname(), height);
     }
 
     @Override
     public String toString() {
-        return name + " " + surname + " (" + height + " м)";
+        return getName() + " " + getSurname() + " (" + height + " м)";
     }
 
 }

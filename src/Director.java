@@ -1,6 +1,14 @@
 public class Director extends Person{
 
-    public int numberOfShows;
+    private int numberOfShows;
+
+    public int getNumberOfShows() {
+        return numberOfShows;
+    }
+
+    public void setNumberOfShows(int numberOfShows) {
+        this.numberOfShows = numberOfShows;
+    }
 
     public Director(String name, String surname, Gender gender, int numberOfShows) {
         super(name, surname, gender);
@@ -9,6 +17,6 @@ public class Director extends Person{
 
     @Override
     public String toString() {
-        return name + " " + surname;
+        return getName() + " " + getSurname();
     }
 }
